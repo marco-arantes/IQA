@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IQA Responsiva</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Calculadora de IQA</h1>
+            <p>Índice de Qualidade da Água (Responsiva)</p>
+        </header>
+        <main>
+            <form id="iqa-form">
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="od_mg_l">Oxigênio Dissolvido (mg/L)</label>
+                        <input type="number" id="od_mg_l" step="any" placeholder="Ex: 8.5" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="temperatura_campo">Temperatura da Amostra (°C)</label>
+                        <input type="number" id="temperatura_campo" step="any" placeholder="Ex: 22" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="altitude">Altitude (m)</label>
+                        <input type="number" id="altitude" step="any" placeholder="Ex: 760" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="coliformes">Coliformes Fecais (NMP/100mL)</label>
+                        <input type="number" id="coliformes" step="any" placeholder="Ex: 200" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="ph">pH (unidades)</label>
+                        <input type="number" id="ph" step="any" min="0" max="14" placeholder="Ex: 7.2" required>
+                    </div>
+                     <div class="input-group">
+                        <label for="dbo">DBO (mg/L)</label>
+                        <input type="number" id="dbo" step="any" placeholder="Ex: 5" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="nitrogenio">Nitrogênio Total (mgN/L)</label>
+                        <input type="number" id="nitrogenio" step="any" placeholder="Ex: 10" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="fosforo">Fósforo Total (mg/L)</label>
+                        <input type="number" id="fosforo" step="any" placeholder="Ex: 0.1" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="turbidez">Turbidez (UNT)</label>
+                        <input type="number" id="turbidez" step="any" placeholder="Ex: 20" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="solidos">Sólidos Totais (mg/L)</label>
+                        <input type="number" id="solidos" step="any" placeholder="Ex: 150" required>
+                    </div>
+                </div>
+                 <div class="input-group full-width">
+                    <label for="delta_temperatura">Alteração de Temperatura (ΔT em °C)</label>
+                    <input type="number" id="delta_temperatura" step="any" placeholder="Diferença da temp. normal do corpo d'água" required>
+                </div>
+
+                <button type="submit" id="calculate-btn">Calcular IQA</button>
+            </form>
+        </main>
+    </div>
+
+    <dialog id="result-dialog">
+        <div class="dialog-content">
+            <h2>Resultado do IQA</h2>
+            <p class="result-line">O IQA é: <span id="iqa-value"></span></p>
+            <p class="result-line">Qualidade: <span id="iqa-quality"></span></p>
+            <button id="close-dialog-btn">Fechar</button>
+        </div>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>
